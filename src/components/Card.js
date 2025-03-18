@@ -3,37 +3,36 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import '../style/Card.css';
 
-const Card = () => {
+const Card = ( product ) => {
+
+    const {badge = "", badgeClass = "", image = "", title = "", price = "0.00$", oldPrice = "0.00$"} = product;
+
     return (
-        <div className="row">
-            <div className="col-lg-3 col-md-4 col-sm-6">
-                <figure className="card shadow">
+        <figure className="card shadow">
 
-                    <a href="details.html" className="img-wrap">
-                        <b className="badge bg-success"> İndirim </b>
-                        <img src="1.jpeg" alt="" />
-                    </a>
+            <a href="details.html" className="img-wrap">
+                <b className={`badge ${badgeClass}`}> {badge} </b>
+                <img src={image} alt={title} />
+            </a>
 
-                    <figcaption className="info-wrap border-top">
+            <figcaption className="info-wrap border-top">
 
-                        <a href="" className="float-end btn btn-light btn-icon">
-                            <FontAwesomeIcon icon={faHeart} className="icon" />
-                        </a>
+                <a href="" className="float-end btn btn-light btn-icon">
+                    <FontAwesomeIcon icon={faHeart} className="icon" />
+                </a>
 
-                        <a href="" className="title text-truncate">
-                            Apple Watch Yıldız Işığı Alüminyum Kasa ve Spor Kordon
-                        </a>
+                <a href="" className="title text-truncate">
+                    {title}
+                </a>
 
-                        <div className="price-wrap">
-                            <span className="price">6.599 TL</span>
-                            <del className="price-old">6.999 TL</del>
-                        </div>
+                <div className="price-wrap">
+                    <span className="price">{price}</span>
+                    <del className="price-old">{oldPrice}</del>
+                </div>
 
-                    </figcaption>
+            </figcaption>
 
-                </figure>
-            </div>
-        </div>
+        </figure>
     )
 }
 

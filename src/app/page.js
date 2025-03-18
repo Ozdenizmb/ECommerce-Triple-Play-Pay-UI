@@ -1,6 +1,7 @@
 import Slider from "@/components/Slider";
 import styles from "./page.module.css";
 import Card from "@/components/Card";
+import data from "../../data.json";
 
 const Home = () => {
     return (
@@ -12,7 +13,14 @@ const Home = () => {
                         <header>
                             <h3 className="mb-md-3 mb-0">Son Eklenenler</h3>
                         </header>
-                        <Card />
+                        
+                        <div className="row">
+                                {data.products.map((product, index) => (
+                                    <div className="col-lg-3 col-md-4 col-sm-6">
+                                        <Card key={index} {...product} />
+                                    </div>
+                                ))}
+                        </div>
                     </div>
                 </section>
             </main>

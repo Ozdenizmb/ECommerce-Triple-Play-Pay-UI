@@ -1,0 +1,102 @@
+{
+    "products": [
+      {
+        "badge": "Discount",
+        "badgeClass": "bg-success",
+        "image": "1.jpeg",
+        "title": "Apple Watch Starlight Aluminum Case and Sport Band",
+        "detail": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At illum vitae dolorem sit. Aperiam non dolorem praesentium accusamus reiciendis voluptatum pariatur? Ipsum deserunt dolores maiores iste iure. Voluptas, odio temporibus?",
+        "color": "Gray", 
+        "connectionFeatures": "GPS",
+        "price": "6.599 TL",
+        "oldPrice": "6.999 TL"
+      },
+      {
+        "badge": null,
+        "badgeClass": null,
+        "image": "2.jpeg",
+        "title": "Apple Watch Starlight Aluminum Case and Sport Band",
+        "detail": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At illum vitae dolorem sit. Aperiam non dolorem praesentium accusamus reiciendis voluptatum pariatur? Ipsum deserunt dolores maiores iste iure. Voluptas, odio temporibus?",
+        "color": "Green",
+        "connectionFeatures": "GPS",
+        "price": "6.599 TL",
+        "oldPrice": "6.999 TL"
+      },
+      {
+        "badge": "Discount",
+        "badgeClass": "bg-success",
+        "image": "3.jpeg",
+        "title": "Apple Watch Starlight Aluminum Case and Sport Band",
+        "detail": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At illum vitae dolorem sit. Aperiam non dolorem praesentium accusamus reiciendis voluptatum pariatur? Ipsum deserunt dolores maiores iste iure. Voluptas, odio temporibus?",
+        "color": "White",
+        "connectionFeatures": "GPS",
+        "price": "6.599 TL",
+        "oldPrice": "6.999 TL"
+      },
+      {
+        "badge": "Special Offer",
+        "badgeClass": "bg-danger",
+        "image": "8.jpeg",
+        "title": "Apple Watch Starlight Aluminum Case and Sport Band",
+        "detail": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At illum vitae dolorem sit. Aperiam non dolorem praesentium accusamus reiciendis voluptatum pariatur? Ipsum deserunt dolores maiores iste iure. Voluptas, odio temporibus?",
+        "color": "Pink",
+        "connectionFeatures": "GPS",
+        "ram": "16GB",
+        "cpuSpeed": "2.4 GHz",
+        "memoryStorageCapacity": "128GB",
+        "price": "6.599 TL",
+        "oldPrice": "6.999 TL"
+      },
+      {
+        "badge": null,
+        "badgeClass": "bg-success",
+        "image": "4.jpeg",
+        "title": "Apple Watch Starlight Aluminum Case and Sport Band",
+        "detail": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At illum vitae dolorem sit. Aperiam non dolorem praesentium accusamus reiciendis voluptatum pariatur? Ipsum deserunt dolores maiores iste iure. Voluptas, odio temporibus?",
+        "color": "Black",
+        "connectionFeatures": "GPS",
+        "price": "6.599 TL",
+        "oldPrice": "6.999 TL"
+      },
+      {
+        "badge": null,
+        "badgeClass": "bg-success",
+        "image": "6.jpeg",
+        "title": "Apple Watch Starlight Aluminum Case and Sport Band",
+        "detail": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At illum vitae dolorem sit. Aperiam non dolorem praesentium accusamus reiciendis voluptatum pariatur? Ipsum deserunt dolores maiores iste iure. Voluptas, odio temporibus?",
+        "color": "Red",
+        "connectionFeatures": "GPS",
+        "ram": "16GB",
+        "cpuSpeed": "2.4 GHz",
+        "memoryStorageCapacity": "128GB",
+        "price": "6.599 TL",
+        "oldPrice": "6.999 TL"
+      },
+      {
+        "badge": "Special Offer",
+        "badgeClass": "bg-danger",
+        "image": "7.jpeg",
+        "title": "Apple Watch Starlight Aluminum Case and Sport Band",
+        "detail": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At illum vitae dolorem sit. Aperiam non dolorem praesentium accusamus reiciendis voluptatum pariatur? Ipsum deserunt dolores maiores iste iure. Voluptas, odio temporibus?",
+        "color": "Blue",
+        "connectionFeatures": "GPS",
+        "ram": "16GB",
+        "cpuSpeed": "2.4 GHz",
+        "memoryStorageCapacity": "128GB",
+        "price": "6.599 TL",
+        "oldPrice": "6.999 TL"
+      },
+      {
+        "badge": "Discount",
+        "badgeClass": "bg-success",
+        "image": "5.jpeg",
+        "title": "Apple Watch Starlight Aluminum Case and Sport Band",
+        "detail": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At illum vitae dolorem sit. Aperiam non dolorem praesentium accusamus reiciendis voluptatum pariatur? Ipsum deserunt dolores maiores iste iure. Voluptas, odio temporibus?",
+        "color": "Red",
+        "connectionFeatures": "GPS",
+        "price": "6.599 TL",
+        "oldPrice": "6.999 TL"
+      }
+    ]
+  }
+  
