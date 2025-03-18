@@ -1,0 +1,28 @@
+@import url(variables.css);
+
+.top-bar {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.btn-light {
+    background-color: #fff;
+    border-color: #dee2e6;
+    color: #212529;
+}
+
+.btn-light .icon {
+    color: #9da1a7;
+    width: 16px;
+    height: 16px;
+}
+
+.btn-light:hover {
+    border-color: #c1c9d0;
+    color: var(--bs-primary);
+}
+
+.btn-size {
+    width: 40px;
+    height: 40px;
+}

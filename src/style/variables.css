@@ -1,0 +1,44 @@
+/* Variables Color */
+
+:root {
+    --bs-primary: #6610f2;
+    --bs-primary-rgb: 102,16,242;
+}
+
+a {
+    color: #6610f2;
+}
+
+a:hover {
+    color: #520dc2
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #6610f2;
+    border-color: #6610f2
+}
+
+.nav-pills .nav-link.active,.nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #6610f2
+}
+
+.nav-link {
+    color: #6610f2;
+}
+
+.nav-link:hover,.nav-link:focus {
+    color: #520dc2
+}
+
+.btn-outline-primary {
+    color: #6610f2;
+    border-color: #6610f2
+}
+
+.btn-outline-primary:hover {
+    color: #fff;
+    background-color: #6610f2;
+    border-color: #6610f2
+}

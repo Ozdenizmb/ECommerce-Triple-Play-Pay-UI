@@ -1,0 +1,49 @@
+import React from 'react'
+import '../style/Topbar.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser, faHeart, faShoppingCart, faSearch  } from '@fortawesome/free-solid-svg-icons';
+import Link from 'next/link';
+
+const Topbar = () => {
+    return (
+        <div className="top-bar">
+            <div className="container">
+                <div className="row gy-3 align-items-center">
+
+                    <div className="col-4 col-lg-2 col-sm-4">
+                        <Link href="/" className="navbar-brand text-primary fs-5">E-Commerce</Link>
+                    </div>
+
+                    <div className="col-8 col-lg-5 order-lg-last col-sm-8">
+                        <div className="text-end">
+                            <a href="/account" className="btn btn-light me-1">
+                                <FontAwesomeIcon icon={faUser} className="icon" />
+                                <span className="ms-1 d-none d-sm-inline-block">Account</span>
+                            </a>
+                            <a href="/favorites" className="btn btn-light me-1">
+                                <FontAwesomeIcon icon={faHeart} className="icon" />
+                                <span className="ms-1 d-none d-sm-inline-block">Favorites</span>
+                            </a>
+                            <Link href="/cart" className="btn btn-light me-1">
+                                <FontAwesomeIcon icon={faShoppingCart} className="icon" />
+                                <span className="ms-1 d-none d-sm-inline-block">Cart</span>
+                            </Link>
+                        </div>
+                    </div>
+
+                    <div className="col-12 col-lg-5">
+                        <div className="input-group">
+                            <input type="text" placeholder="Search E-Commerce" className="form-control" />
+                            <button className="btn btn-primary btn-size">
+                                <FontAwesomeIcon icon={faSearch} className="icon" />
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export default Topbar
