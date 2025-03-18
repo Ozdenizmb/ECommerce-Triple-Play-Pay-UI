@@ -1,10 +1,19 @@
-import React from 'react'
+'use client';
+import React, { useState } from 'react'
 import '../style/Topbar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faHeart, faShoppingCart, faSearch  } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faHeart, faShoppingCart, faSearch, faCreditCard, faCogs, faSignOutAlt  } from '@fortawesome/free-solid-svg-icons';
+
 import Link from 'next/link';
 
 const Topbar = () => {
+
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+    const toggleDropdown = () => {
+        setIsDropdownOpen(!isDropdownOpen);
+    };
+
     return (
         <div className="top-bar">
             <div className="container">
@@ -16,10 +25,32 @@ const Topbar = () => {
 
                     <div className="col-8 col-lg-5 order-lg-last col-sm-8">
                         <div className="text-end">
-                            <a href="/account" className="btn btn-light me-1">
-                                <FontAwesomeIcon icon={faUser} className="icon" />
-                                <span className="ms-1 d-none d-sm-inline-block">Account</span>
-                            </a>
+                            <div className="dropdown">
+                                <button className="btn btn-light me-1" onClick={toggleDropdown}>
+                                    <FontAwesomeIcon icon={faUser} className="icon" />
+                                    <span className="ms-1 d-none d-sm-inline-block">Account</span>
+                                </button>
+                                {isDropdownOpen && (
+                                    <div className="dropdown-menu show">
+                                        <Link href="/profile" className="dropdown-item">
+                                            <FontAwesomeIcon icon={faUser} className="icon me-2" />
+                                            Profile
+                                        </Link>
+                                        <Link href="/credit-card" className="dropdown-item">
+                                            <FontAwesomeIcon icon={faCreditCard} className="icon me-2" />
+                                            Credit Card
+                                        </Link>
+                                        <Link href="/settings" className="dropdown-item">
+                                            <FontAwesomeIcon icon={faCogs} className="icon me-2" />
+                                            Settings
+                                        </Link>
+                                        <Link href="/logout" className="dropdown-item">
+                                            <FontAwesomeIcon icon={faSignOutAlt} className="icon me-2" />
+                                            Logout
+                                        </Link>
+                                    </div>
+                                )}
+                            </div>
                             <a href="/favorites" className="btn btn-light me-1">
                                 <FontAwesomeIcon icon={faHeart} className="icon" />
                                 <span className="ms-1 d-none d-sm-inline-block">Favorites</span>

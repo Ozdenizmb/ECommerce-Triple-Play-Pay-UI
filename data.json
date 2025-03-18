@@ -1,6 +1,7 @@
 {
     "products": [
       {
+        "id": "1",
         "badge": "Discount",
         "badgeClass": "bg-success",
         "image": "1.jpeg",
@@ -12,6 +13,7 @@
         "oldPrice": "6.999 TL"
       },
       {
+        "id": "2",
         "badge": null,
         "badgeClass": null,
         "image": "2.jpeg",
@@ -23,6 +25,7 @@
         "oldPrice": "6.999 TL"
       },
       {
+        "id": "3",
         "badge": "Discount",
         "badgeClass": "bg-success",
         "image": "3.jpeg",
@@ -34,6 +37,7 @@
         "oldPrice": "6.999 TL"
       },
       {
+        "id": "4",
         "badge": "Special Offer",
         "badgeClass": "bg-danger",
         "image": "8.jpeg",
@@ -48,6 +52,7 @@
         "oldPrice": "6.999 TL"
       },
       {
+        "id": "5",
         "badge": null,
         "badgeClass": null,
         "image": "4.jpeg",
@@ -59,6 +64,7 @@
         "oldPrice": "6.999 TL"
       },
       {
+        "id": "6",
         "badge": null,
         "badgeClass": null,
         "image": "6.jpeg",
@@ -73,6 +79,7 @@
         "oldPrice": "6.999 TL"
       },
       {
+        "id": "7",
         "badge": "Special Offer",
         "badgeClass": "bg-danger",
         "image": "7.jpeg",
@@ -87,6 +94,7 @@
         "oldPrice": "6.999 TL"
       },
       {
+        "id": "8",
         "badge": "Discount",
         "badgeClass": "bg-success",
         "image": "5.jpeg",

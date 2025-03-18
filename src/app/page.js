@@ -15,9 +15,9 @@ const Home = () => {
                         </header>
                         
                         <div className="row">
-                                {data.products.map((product, index) => (
-                                    <div className="col-lg-3 col-md-4 col-sm-6">
-                                        <Card key={index} {...product} />
+                                {data.products.map((product) => (
+                                    <div className="col-lg-3 col-md-4 col-sm-6" key={product.id}>
+                                        <Card {...product} />
                                     </div>
                                 ))}
                         </div>
