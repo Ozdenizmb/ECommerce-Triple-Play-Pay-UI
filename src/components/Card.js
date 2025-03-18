@@ -2,28 +2,29 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import '../style/Card.css';
+import Link from 'next/link';
 
-const Card = ( product ) => {
+const Card = ( {product} ) => {
 
-    const {badge = "", badgeClass = "", image = "", title = "", price = "0.00$", oldPrice = "0.00$"} = product;
+    const {id = "", badge = "", badgeClass = "", image = "", title = "", price = "0.00$", oldPrice = "0.00$"} = product;
 
     return (
         <figure className="card shadow">
 
-            <a href="details.html" className="img-wrap">
+            <Link href={`details/${id}`} className="img-wrap">
                 <b className={`badge ${badgeClass}`}> {badge} </b>
-                <img src={image} alt={title} />
-            </a>
+                <img src={image || null} alt={title} />
+            </Link>
 
             <figcaption className="info-wrap border-top">
 
-                <a href="" className="float-end btn btn-light btn-icon">
+                <Link href={`details/${id}`} className="float-end btn btn-light btn-icon">
                     <FontAwesomeIcon icon={faHeart} className="icon" />
-                </a>
+                </Link>
 
-                <a href="" className="title text-truncate">
+                <Link href="" className="title text-truncate">
                     {title}
-                </a>
+                </Link>
 
                 <div className="price-wrap">
                     <span className="price">{price}</span>
