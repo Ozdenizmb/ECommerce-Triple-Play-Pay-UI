@@ -1,0 +1,79 @@
+#credit-cart-info .credit-card-container {
+    display: flex;
+    margin: 20px 0;
+}
+
+#credit-cart-info .credit-card {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    border-radius: 15px;
+    color: white;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+#credit-cart-info .credit-card-header {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#credit-cart-info .credit-card-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#credit-cart-info .credit-card-icon {
+    font-size: 1.5rem;
+}
+
+#credit-cart-info .credit-card-body {
+    padding: 5px 20px 5px 20px;
+}
+
+#credit-cart-info .credit-card-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+#credit-cart-info .credit-card-info-trash {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+#credit-cart-info .info-icon {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+#credit-cart-info .info-text {
+    display: flex;
+    flex-direction: column;
+}
+
+#credit-cart-info .info-label {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+#credit-cart-info .info-value {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+#credit-cart-info .trash-button {
+    cursor: pointer;
+    color: red;
+}
+
+#credit-cart-info .trash-button:hover {
+    color: white;
+}

@@ -2,11 +2,9 @@
 import React, { useState } from 'react'
 import Cards from "react-credit-cards-2";
 import "react-credit-cards-2/dist/es/styles-compiled.css";
-import { ToastContainer, toast } from 'react-toastify';
 import crypto from "crypto";
 
-const CreditCardForm = () => {
-    const [token, setToken] = useState("");
+const CreditCardForm = ({ onAdd }) => {
     const [state, setState] = useState({
         number: "",
         name: "",
@@ -29,8 +27,14 @@ const CreditCardForm = () => {
         event.preventDefault();
         const cardData = `${state.number}-${state.expiry}-${state.cvc}`;
         const hashedToken = crypto.createHash("sha256").update(cardData).digest("hex");
-        setToken(hashedToken);
-        toast.success("Your credit card has been saved successfully.");
+        onAdd(hashedToken, state.number.slice(-4), state.expiry, state.name );
+
+        state.number = "";
+        state.name = "";
+        state.expiry = "";
+        state.cvc = "";
+        state.name = "";
+        state.focus = "";
     }
     
       return (
@@ -100,7 +104,6 @@ const CreditCardForm = () => {
                 </div>
                 </form>
             </div>
-            <ToastContainer />
         </div>
     );
 }
