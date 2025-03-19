@@ -87,7 +87,8 @@ const Details = ({ params }) => {
                                 <p className="text-success">In Stock</p>
 
                                 <div className="mb-3">
-                                    <b className="price h5">{product.price}</b>
+                                    <b className="price h5 me-2">{product.price}</b>
+                                    <del className="price h5 text-danger">{product.oldPrice}</del>
                                 </div>
 
                                 <div className="product-desc">
@@ -100,7 +101,7 @@ const Details = ({ params }) => {
                                     <dt className="col-lg-4">Connection Features:</dt>
                                     <dd className="col-lg-8">{product.connectionFeatures}</dd>
                                     {product.category === "Phone" &&
-                                        <div>
+                                        <div className="row">
                                             <dt className="col-lg-4">Ram:</dt>
                                             <dd className="col-lg-8">{product.ram}</dd>
                                             <dt className="col-lg-4">CPU Speed:</dt>

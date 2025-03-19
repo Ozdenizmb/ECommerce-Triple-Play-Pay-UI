@@ -27,8 +27,8 @@ const Card = ( {product} ) => {
                 </Link>
 
                 <div className="price-wrap">
-                    <span className="price">{price}</span>
-                    <del className="price-old">{oldPrice}</del>
+                    <span className="price me-1">{price}</span>
+                    <del className="price-old text-danger">{oldPrice}</del>
                 </div>
 
             </figcaption>
