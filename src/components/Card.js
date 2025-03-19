@@ -4,7 +4,7 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import '../style/Card.css';
 import Link from 'next/link';
 
-const Card = ( {product} ) => {
+const Card = ({ product }) => {
 
     const {id = "", badge = "", badgeClass = "", image = "", title = "", price = "0.00$", oldPrice = "0.00$"} = product;
 
@@ -18,11 +18,11 @@ const Card = ( {product} ) => {
 
             <figcaption className="info-wrap border-top">
 
-                <Link href={`details/${id}`} className="float-end btn btn-light btn-icon">
+                <Link href="" className="float-end btn btn-light btn-icon">
                     <FontAwesomeIcon icon={faHeart} className="icon" />
                 </Link>
 
-                <Link href="" className="title text-truncate">
+                <Link href={`details/${id}`} className="title text-truncate">
                     {title}
                 </Link>
 

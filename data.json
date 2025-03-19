@@ -10,8 +10,8 @@
         "category": "Watch",
         "color": "Gray", 
         "connectionFeatures": "GPS",
-        "price": "$349",
-        "oldPrice": "$399"
+        "price": "£349",
+        "oldPrice": "£399"
       },
       {
         "id": "2",
@@ -23,8 +23,8 @@
         "category": "Watch",
         "color": "Green",
         "connectionFeatures": "GPS",
-        "price": "$749",
-        "oldPrice": "$799"
+        "price": "£749",
+        "oldPrice": "£799"
       },
       {
         "id": "3",
@@ -36,8 +36,8 @@
         "category": "Watch",
         "color": "White",
         "connectionFeatures": "GPS",
-        "price": "$199",
-        "oldPrice": "$249"
+        "price": "£199",
+        "oldPrice": "£249"
       },
       {
         "id": "4",
@@ -52,8 +52,8 @@
         "ram": "16GB",
         "cpuSpeed": "2.4 GHz",
         "memoryStorageCapacity": "128GB",
-        "price": "$549",
-        "oldPrice": "$599"
+        "price": "£549",
+        "oldPrice": "£599"
       },
       {
         "id": "5",
@@ -65,8 +65,8 @@
         "category": "Watch",
         "color": "Black",
         "connectionFeatures": "GPS",
-        "price": "$349",
-        "oldPrice": "$399"
+        "price": "£349",
+        "oldPrice": "£399"
       },
       {
         "id": "6",
@@ -81,8 +81,8 @@
         "ram": "16GB",
         "cpuSpeed": "2.4 GHz",
         "memoryStorageCapacity": "128GB",
-        "price": "$349",
-        "oldPrice": "$382"
+        "price": "£349",
+        "oldPrice": "£382"
       },
       {
         "id": "7",
@@ -110,8 +110,8 @@
         "category": "Watch",
         "color": "Red",
         "connectionFeatures": "GPS",
-        "price": "$339",
-        "oldPrice": "$399"
+        "price": "£339",
+        "oldPrice": "£399"
       }
     ]
   }

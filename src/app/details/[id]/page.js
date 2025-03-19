@@ -1,4 +1,5 @@
-import React from 'react'
+'use client';
+import React, { use, useEffect, useState } from 'react'
 import data from '../../../../data.json';
 import '../../../style/Details.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -6,18 +7,42 @@ import { faHeart, faShoppingCart, faStar  } from '@fortawesome/free-solid-svg-ic
 import Card from '@/components/Card';
 
 const Details = ({ params }) => {
-    const { id } = params;
+    const { id } = use(params);
+    const [isAddCart, setIsAddCart] = useState(false);
 
     const product = data.products.find((product) => product.id === id);
+    // Static data. U can dynamic or random data!
+    const product1 = data.products.find((product) => product.id === "1");
+    const product2 = data.products.find((product) => product.id === "2");
+    const product3 = data.products.find((product) => product.id === "3");
+    const product4 = data.products.find((product) => product.id === "4");
 
     if (!product) {
         return <div>Product Not Found!</div>;
     }
 
-    const product1 = data.products.find((product) => product.id === "1");
-    const product2 = data.products.find((product) => product.id === "2");
-    const product3 = data.products.find((product) => product.id === "3");
-    const product4 = data.products.find((product) => product.id === "4");
+    useEffect(() => {
+        const existingCart = JSON.parse(sessionStorage.getItem('cart')) || [];
+        for(let i = 0; i < existingCart.length; i++) {
+            if(existingCart[i] === id) {
+                setIsAddCart(true);
+            }
+        }
+    }, []);
+
+    const onClickAddCart = () => {
+        const existingCart = JSON.parse(sessionStorage.getItem('cart')) || [];
+        existingCart.push(id);
+        sessionStorage.setItem('cart', JSON.stringify(existingCart));
+        setIsAddCart(true);
+    }
+
+    const onClickAddedCart = () => {
+        const existingCart = JSON.parse(sessionStorage.getItem('cart')) || [];
+        existingCart.pop(id);
+        sessionStorage.setItem('cart', JSON.stringify(existingCart));
+        setIsAddCart(false);
+    }
 
     return (
         <div>
@@ -123,14 +148,21 @@ const Details = ({ params }) => {
                                 </div>
 
                                 <div className="buttons">
-                                    <a href="#" className="btn btn-warning me-2" onClick={console.log(product1)}>
-                                        <FontAwesomeIcon icon={faShoppingCart} className="icon me-1" />
-                                        Add Cart
-                                    </a>
-                                    <a href="#" className="btn btn-light me-2">
+                                    {!isAddCart ? 
+                                        <button className="btn btn-warning me-2" onClick={onClickAddCart}>
+                                            <FontAwesomeIcon icon={faShoppingCart} className="icon me-1" />
+                                            Add Cart
+                                        </button>
+                                    :
+                                        <button className="btn btn-success me-2" onClick={onClickAddedCart}>
+                                            <FontAwesomeIcon icon={faShoppingCart} className="icon me-1" />
+                                            Added Cart
+                                        </button>
+                                    }
+                                    <button className="btn btn-light me-2">
                                         <FontAwesomeIcon icon={faHeart} className="icon me-1" />
                                         Add Favorites
-                                    </a>
+                                    </button>
                                 </div>
 
                             </article>
