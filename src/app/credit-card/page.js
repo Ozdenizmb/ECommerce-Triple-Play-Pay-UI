@@ -28,7 +28,7 @@ const CreditCard = () => {
         toast.success("Your credit card has been saved successfully.");
     }
 
-    const onClickAddedCreditCard = (token) => {
+    const onClickDeleteCreditCard = (token) => {
         const existingCreditCard = JSON.parse(sessionStorage.getItem('credit-card')) || [];
         const updatedCart = existingCreditCard.filter((item) => item.token !== token);
         sessionStorage.setItem('credit-card', JSON.stringify(updatedCart));
@@ -47,7 +47,7 @@ const CreditCard = () => {
                     <div className='d-flex mt-5'>
                         {creditCard.map((card) => (
                             <div key={card.token} className='me-4'>
-                                <CreditCardInfo creditCard={card} onRemove={onClickAddedCreditCard} />
+                                <CreditCardInfo creditCard={card} onRemove={onClickDeleteCreditCard} />
                             </div>
                         ))}
                     </div>

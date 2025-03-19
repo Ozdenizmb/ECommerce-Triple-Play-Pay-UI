@@ -3,15 +3,20 @@ import CartCard from '@/components/CartCard';
 import React, { useEffect, useState } from 'react'
 import data from '../../../data.json';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart  } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingCart, faCreditCard  } from '@fortawesome/free-solid-svg-icons';
 import NoFoundData from '@/components/NoFoundData';
+import CreditCardInCart from '@/components/CreditCardInCart';
 
 const Cart = () => {
     const [cartProduct, setCartProduct] = useState([]);
+    const [creditCard, setCreditCard] = useState([]);
     const [totalAmount, setTotalAmount] = useState(0);
+
+    const [selectedCard, setSelectedCard] = useState(null);
 
     useEffect(() => {
         updateCart();
+        getCreditCardsInfo();
     }, []);
 
     const updateCart = () => {
@@ -32,8 +37,12 @@ const Cart = () => {
         setTotalAmount(total);
     }
 
-    const onClickBuy = () => {
+    const getCreditCardsInfo = () => {
+        const existingCreditCard = JSON.parse(sessionStorage.getItem('credit-card')) || [];
+        setCreditCard(existingCreditCard);
+    }
 
+    const onClickBuy = () => {
     }
 
     const handleRemoveProduct = (id) => {
@@ -76,6 +85,33 @@ const Cart = () => {
                             <div className='row align-items-center'>
                                 <div className='col-lg-9 col-md-12 h6 mt-2 mb-2'>Total</div>
                                 <div className='col-lg-3 col-md-12 h6 mt-2 mb-2'>£{totalAmount}</div>
+                            </div>
+                            <div>
+                                {creditCard.length !== 0 ?
+                                    creditCard.map((card) => (
+                                        <div key={card.token} className='mb-3'>
+                                        <label className='d-flex align-items-center'>
+                                            <input
+                                                type="radio"
+                                                name="creditCard"
+                                                value={card.token}
+                                                checked={selectedCard === card.token}
+                                                onChange={() => setSelectedCard(card.token)}
+                                                className='me-2'
+                                            />
+                                            <div className='d-flex mt-2'>
+                                                <FontAwesomeIcon icon={faCreditCard} className="me-2 mt-1" />
+                                                <p className='me-3'>{card.name}</p>
+                                                <p>**** **** **** {card.numberLastFourDigit}</p>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    ))
+                                    :
+                                    <div className='mt-5'>
+                                        <NoFoundData errorMessage={"No saved credit card information found."} />
+                                    </div>
+                                }
                             </div>
                             <div className='row mt-3'>
                                 <button className="btn btn-warning me-2" onClick={onClickBuy}>
