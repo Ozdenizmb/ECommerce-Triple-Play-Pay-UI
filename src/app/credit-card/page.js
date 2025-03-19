@@ -21,6 +21,7 @@ const CreditCard = () => {
     const onClickAddCreditCard = (token, numberLastFourDigit, month, year, name) => {
         const existingCreditCard = JSON.parse(sessionStorage.getItem('credit-card')) || [];
         const card = {token, numberLastFourDigit, month, year, name};
+        console.log("TPP Send Credit Card Token: ", token);
         existingCreditCard.push(card);
         sessionStorage.setItem('credit-card', JSON.stringify(existingCreditCard));
         updateCreditCardData()

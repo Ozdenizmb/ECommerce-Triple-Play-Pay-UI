@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import '../style/Topbar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faHeart, faShoppingCart, faSearch, faCreditCard, faCogs, faSignOutAlt  } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faHeart, faShoppingCart, faSearch, faCreditCard, faCogs, faSignOutAlt, faBagShopping  } from '@fortawesome/free-solid-svg-icons';
 
 import Link from 'next/link';
 
@@ -39,6 +39,10 @@ const Topbar = () => {
                                         <Link href="/credit-card" className="dropdown-item">
                                             <FontAwesomeIcon icon={faCreditCard} className="icon me-2" />
                                             Credit Card
+                                        </Link>
+                                        <Link href="/order" className="dropdown-item">
+                                            <FontAwesomeIcon icon={faBagShopping} className="icon me-2" />
+                                            Order
                                         </Link>
                                         <div className="dropdown-item">
                                             <FontAwesomeIcon icon={faCogs} className="icon me-2" />

@@ -41,7 +41,6 @@ const Cart = () => {
     const getCreditCardsInfo = () => {
         const existingCreditCard = JSON.parse(sessionStorage.getItem('credit-card')) || [];
         setCreditCard(existingCreditCard);
-        console.log(creditCard);
     }
 
     const onClickBuy = async () => {
@@ -54,9 +53,10 @@ const Cart = () => {
                 token: selectedCard,
                 amount: totalAmount
             }
-            await chargePayment(body);
+            const response = await chargePayment(body);
+            const transactionId = response.data.message.transaction_id;
 
-            const order = {cartProduct, selectedCard, totalAmount}
+            const order = {cartProduct, selectedCard, totalAmount, transactionId}
             const existingOrder = JSON.parse(sessionStorage.getItem('order')) || [];
             existingOrder.push(order);
             sessionStorage.setItem('order', JSON.stringify(existingOrder));
