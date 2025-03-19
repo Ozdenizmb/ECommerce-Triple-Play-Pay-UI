@@ -18,9 +18,9 @@ const CreditCard = () => {
         setCreditCard(existingCreditCard);
     }
 
-    const onClickAddCreditCard = (token, numberLastFourDigit, expiry, name) => {
+    const onClickAddCreditCard = (token, numberLastFourDigit, month, year, name) => {
         const existingCreditCard = JSON.parse(sessionStorage.getItem('credit-card')) || [];
-        const card = {token, numberLastFourDigit, expiry, name};
+        const card = {token, numberLastFourDigit, month, year, name};
         existingCreditCard.push(card);
         sessionStorage.setItem('credit-card', JSON.stringify(existingCreditCard));
         updateCreditCardData()

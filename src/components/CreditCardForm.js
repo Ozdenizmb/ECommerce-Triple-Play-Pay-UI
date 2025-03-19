@@ -1,8 +1,8 @@
 'use client';
+import { tokenizedCard } from '@/api/apiCalls';
 import React, { useState } from 'react'
 import Cards from "react-credit-cards-2";
 import "react-credit-cards-2/dist/es/styles-compiled.css";
-import crypto from "crypto";
 
 const CreditCardForm = ({ onAdd }) => {
     const [state, setState] = useState({
@@ -10,9 +10,10 @@ const CreditCardForm = ({ onAdd }) => {
         name: "",
         expiry: "",
         cvc: "",
-        name: "",
         focus: "",
     });
+
+    let token = "";
     
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -23,11 +24,21 @@ const CreditCardForm = ({ onAdd }) => {
         setState((prev) => ({ ...prev, focus: e.target.name }));
     };
     
-    const onClickSave = (event) => {
+    const onClickSave = async (event) => {
         event.preventDefault();
-        const cardData = `${state.number}-${state.expiry}-${state.cvc}`;
-        const hashedToken = crypto.createHash("sha256").update(cardData).digest("hex");
-        onAdd(hashedToken, state.number.slice(-4), state.expiry, state.name );
+        try {
+            const body = {
+                credit_card_number: state.number,
+                expiration_month: state.expiry.slice(0, 2),
+                expiration_year: state.expiry.slice(-2),
+                cvv: state.cvc
+            }
+            const response = await tokenizedCard(body);
+            token = response.data;
+        } catch(error) {
+
+        }
+        onAdd(token, state.number.slice(-4), state.expiry.slice(0, 2), state.expiry.slice(-2), state.name);
 
         state.number = "";
         state.name = "";

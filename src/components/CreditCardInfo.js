@@ -37,7 +37,7 @@ const CreditCardInfo = ({ creditCard, onRemove }) => {
                                 <FontAwesomeIcon icon={faCalendarAlt} className="info-icon" />
                                 <div className="info-text">
                                     <span className="info-label">Expiration Date</span>
-                                    <span className="info-value">{creditCard.expiry}</span>
+                                    <span className="info-value">{creditCard.month} / {creditCard.year}</span>
                                 </div>
                             </div>
                             <div className='trash-button' onClick={onClickTrash}>

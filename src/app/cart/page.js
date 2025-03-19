@@ -5,6 +5,8 @@ import data from '../../../data.json';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart, faCreditCard  } from '@fortawesome/free-solid-svg-icons';
 import NoFoundData from '@/components/NoFoundData';
+import { ToastContainer, toast } from 'react-toastify';
+import { chargePayment } from '@/api/apiCalls';
 
 const Cart = () => {
     const [cartProduct, setCartProduct] = useState([]);
@@ -39,9 +41,32 @@ const Cart = () => {
     const getCreditCardsInfo = () => {
         const existingCreditCard = JSON.parse(sessionStorage.getItem('credit-card')) || [];
         setCreditCard(existingCreditCard);
+        console.log(creditCard);
     }
 
-    const onClickBuy = () => {
+    const onClickBuy = async () => {
+        try {
+            if(selectedCard === null || selectedCard === "") {
+                toast.error("Please select the credit card you will use for payment..");
+                return;
+            }
+            const body = {
+                token: selectedCard,
+                amount: totalAmount
+            }
+            await chargePayment(body);
+
+            const order = {cartProduct, selectedCard, totalAmount}
+            const existingOrder = JSON.parse(sessionStorage.getItem('order')) || [];
+            existingOrder.push(order);
+            sessionStorage.setItem('order', JSON.stringify(existingOrder));
+            sessionStorage.setItem('cart', JSON.stringify([]));
+            updateCart();
+
+            toast.success("Payment was successfully received.");
+        } catch(error) {
+            toast.error("An unexpected error occurred while processing the payment.");
+        }
     }
 
     const handleRemoveProduct = (id) => {
@@ -122,6 +147,7 @@ const Cart = () => {
                     </div>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     )
 }

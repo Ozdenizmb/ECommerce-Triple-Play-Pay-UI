@@ -32,26 +32,26 @@ const Topbar = () => {
                                 </button>
                                 {isDropdownOpen && (
                                     <div className="dropdown-menu show">
-                                        <Link href="/profile" className="dropdown-item">
+                                        <div className="dropdown-item">
                                             <FontAwesomeIcon icon={faUser} className="icon me-2" />
                                             Profile
-                                        </Link>
+                                        </div>
                                         <Link href="/credit-card" className="dropdown-item">
                                             <FontAwesomeIcon icon={faCreditCard} className="icon me-2" />
                                             Credit Card
                                         </Link>
-                                        <Link href="/settings" className="dropdown-item">
+                                        <div className="dropdown-item">
                                             <FontAwesomeIcon icon={faCogs} className="icon me-2" />
                                             Settings
-                                        </Link>
-                                        <Link href="/logout" className="dropdown-item">
+                                        </div>
+                                        <div className="dropdown-item">
                                             <FontAwesomeIcon icon={faSignOutAlt} className="icon me-2" />
                                             Logout
-                                        </Link>
+                                        </div>
                                     </div>
                                 )}
                             </div>
-                            <a href="/favorites" className="btn btn-light me-1">
+                            <a className="btn btn-light me-1">
                                 <FontAwesomeIcon icon={faHeart} className="icon" />
                                 <span className="ms-1 d-none d-sm-inline-block">Favorites</span>
                             </a>
