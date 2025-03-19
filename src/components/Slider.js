@@ -44,8 +44,8 @@ const Slider = () => {
                                 delay: 3000,
                                 disableOnInteraction: false,
                             }}
-                            onSwiper={(swiper) => console.log(swiper)}
-                            onSlideChange={() => console.log('slide change')}
+                            onSwiper={(swiper) => (null)}
+                            onSlideChange={() => (null)}
                         >
                         <SwiperSlide key={'slider1'}><img src='/slider-1.jpeg' alt='slider1'/></SwiperSlide>
                         <SwiperSlide key={'slider2'}><img src='/slider-2.jpeg' alt='slider2'/></SwiperSlide>

@@ -5,7 +5,6 @@ import data from '../../../data.json';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart, faCreditCard  } from '@fortawesome/free-solid-svg-icons';
 import NoFoundData from '@/components/NoFoundData';
-import CreditCardInCart from '@/components/CreditCardInCart';
 
 const Cart = () => {
     const [cartProduct, setCartProduct] = useState([]);

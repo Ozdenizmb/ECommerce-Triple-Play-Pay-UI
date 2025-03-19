@@ -15,7 +15,6 @@ const CreditCard = () => {
 
     const updateCreditCardData = () => {
         const existingCreditCard = JSON.parse(sessionStorage.getItem('credit-card')) || [];
-        console.log(existingCreditCard);
         setCreditCard(existingCreditCard);
     }
 

@@ -7,7 +7,6 @@ const CreditCardInfo = ({ creditCard, onRemove }) => {
 
     const onClickTrash = () => {
         onRemove(creditCard.token);
-        console.log(creditCard.token)
     }
 
     return (
