@@ -39,8 +39,8 @@ const Details = ({ params }) => {
 
     const onClickAddedCart = () => {
         const existingCart = JSON.parse(sessionStorage.getItem('cart')) || [];
-        existingCart.pop(id);
-        sessionStorage.setItem('cart', JSON.stringify(existingCart));
+        const updatedCart = existingCart.filter((item) => item !== id);
+        sessionStorage.setItem('cart', JSON.stringify(updatedCart));
         setIsAddCart(false);
     }
 

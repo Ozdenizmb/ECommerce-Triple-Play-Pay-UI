@@ -4,12 +4,17 @@ import React, { useEffect, useState } from 'react'
 import data from '../../../data.json';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart  } from '@fortawesome/free-solid-svg-icons';
+import NoFoundData from '@/components/NoFoundData';
 
 const Cart = () => {
     const [cartProduct, setCartProduct] = useState([]);
     const [totalAmount, setTotalAmount] = useState(0);
 
     useEffect(() => {
+        updateCart();
+    }, []);
+
+    const updateCart = () => {
         const existingCart = JSON.parse(sessionStorage.getItem('cart')) || [];
         let total = 0;
         const tempCartProduct = [];
@@ -25,16 +30,18 @@ const Cart = () => {
         }
         setCartProduct(tempCartProduct);
         setTotalAmount(total);
-    }, []);
+    }
 
     const onClickBuy = () => {
 
     }
 
-    if(cartProduct.length === 0) {
-        return (
-            <div>Cart Empty</div>
-        )
+    const handleRemoveProduct = (id) => {
+        const existingCart = JSON.parse(sessionStorage.getItem('cart')) || [];
+        const updatedCart = existingCart.filter((item) => item !== id);
+        sessionStorage.setItem('cart', JSON.stringify(updatedCart));
+
+        updateCart();
     }
 
     return (
@@ -42,13 +49,20 @@ const Cart = () => {
             <h3>Your Cart ({cartProduct.length})</h3>
             <div className='row'>
                 <div className='col-lg-8 col-md-12 mb-5'>
-                    {cartProduct.map((product) => (
-                        <div key={product.id}>
-                            <CartCard product={product} />
-                        </div>
-                    ))}
+                    {cartProduct.length !== 0 ?
+                        cartProduct.map((product) => (
+                            <div key={product.id}>
+                                <CartCard product={product} onRemove={handleRemoveProduct} />
+                            </div>
+                        ))
+                        :
+                        (
+                            <NoFoundData errorMessage={"Cart Empty"}/>
+                        )
+                    }
+                    
                 </div>
-                <div className='col-lg-4 col-md-12'>
+                <div className='col-lg-4 col-md-12 mb-5'>
                     <div className='card shadow'>
                         <div className='container'>
                             <p className='h2 mt-2 mb-2'>Total Amount</p>

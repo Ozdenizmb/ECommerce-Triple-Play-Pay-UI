@@ -1,32 +1,34 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash, faStar } from '@fortawesome/free-solid-svg-icons';
 import '../style/CartCard.css';
 import Link from 'next/link';
-import data from '../../data.json';
 
-const CartCard = ({ product }) => {
+const CartCard = ({ product, onRemove }) => {
 
-    //const product = data.products.find((product) => product.id === dataId);
     const {id = "", image = "", title = "", price = "0.00$", oldPrice = "0.00$"} = product;
+
+    const onClickTrash = () => {
+        onRemove(id);
+    }
 
     return (
         <div className="card product-card mb-3 shadow">
             <div className="row g-0">
                 <div className="col-xl-3 col-md-4">
-                    <a href="#" className="img-wrap">
+                    <Link href={`details/${id}`} className="img-wrap">
                         <img src={image} alt="phone" />
-                    </a>
+                    </Link>
                 </div>
                 <div className="col-xl-9 col-md-8 border-start">
                     <div className="card-body">
 
-                        <a href="#" className="btn btn-danger btn-icon float-end">
+                        <div className="btn btn-danger btn-icon float-end" onClick={onClickTrash}>
                             <FontAwesomeIcon icon={faTrash} className="icon" />
-                        </a>
-                        <a href="#" className="h6 mb-3 title">
+                        </div>
+                        <Link href={`details/${id}`} className="h6 mb-3 title">
                             {title}
-                        </a>
+                        </Link>
 
                         <div className="mb-2">
                             <div className="rating mb-2">
