@@ -22,6 +22,11 @@ export const metadata = {
 const RootLayout = ({ children }) => {
     return (
         <html lang="en">
+            <head>
+                <meta charSet="UTF-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <script src="https://www.tripleplaypay.com/static/js/sandbox.js"></script>
+            </head>
             <body className={`${geistSans.variable} ${geistMono.variable} bg-light`}>
                 <Topbar />
                 {children}

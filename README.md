@@ -1,3 +1,7 @@
+To successfully run the project, create a .env file and define the REACT_APP_TPP_PUBLIC_API_KEY variable inside it, setting your public API key here.
+
+<br/>
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app) and This repository was created to learn about React's evolving structure and its new architecture.
 
 ## Getting Started
