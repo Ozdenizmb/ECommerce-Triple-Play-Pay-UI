@@ -8,7 +8,12 @@ const TppCreditCard = () => {
 
         triple.generatePaymentForm({
             containerSelector: '#example',
-            amount: 10.00,
+            amount: 20.00,
+            paymentOptions: ['credit_card'],
+            phoneOption: false,
+            tokenMode: 'save',
+            savePaymentToken: true,
+            optIn: true,
             //Handle error response
             onError: (errorData) => {
                 console.log('Error');
